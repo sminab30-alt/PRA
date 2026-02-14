@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Past Simple vs Past Continuous | Lesson + Practice</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#101a33;
+      --panel2:#0f1730;
+      --text:#eef3ff;
+      --muted:#b9c6ea;
+      --border:rgba(255,255,255,.12);
+      --accent:#7aa8ff;
+      --good:#4ade80;
+      --warn:#fbbf24;
+      --bad:#fb7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --r1:18px;
+      --r2:14px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1100px 650px at 20% 0%, rgba(122,168,255,.20), transparent 55%),
+        radial-gradient(950px 600px at 80% 10%, rgba(74,222,128,.12), transparent 60%),
+        radial-gradient(950px 700px at 50% 100%, rgba(251,191,36,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      line-height:1.4;
+    }
+
+    .wrap{
+      max-width:1120px;
+      margin:0 auto;
+      padding:22px 18px 70px;
+    }
+
+    /* Header */
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing:-.02em;
+      line-height:1.1;
+    }
+    .sub{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      max-width:72ch;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      user-select:none;
+      backdrop-filter: blur(10px);
+    }
+    .pill strong{ color:var(--text); }
+
+    button{
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(122,168,255,.16);
+      color:var(--text);
+      cursor:pointer;
+      font-weight:800;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    button:hover{
+      transform: translateY(-1px);
+      background: rgba(122,168,255,.24);
+      border-color: rgba(122,168,255,.45);
+    }
+    button.secondary{
+      background: rgba(255,255,255,.06);
+      font-weight:700;
+    }
+    button.secondary:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.20);
+    }
+
+    /* Layout */
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .top{flex-direction:column; align-items:stretch;}
+      .actions{justify-content:flex-start;}
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius: var(--r1);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .cardHead{
+      padding:16px 16px 12px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.12);
+    }
+    .cardHead h2{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.01em;
+    }
+    .hint{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .content{ padding:16px; display:flex; flex-direction:column; gap:14px; }
+
+    /* Rule blocks */
+    .sectionTitle{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-radius: var(--r2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .sectionTitle b{ font-size:14px; }
+    .badge{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    .rulesGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 680px){
+      .rulesGrid{grid-template-columns:1fr;}
+    }
+
+    .rule{
+      padding:14px;
+      border-radius: var(--r2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .rule h3{
+      margin:0 0 8px;
+      font-size:14px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(122,168,255,.9);
+      box-shadow: 0 0 0 3px rgba(122,168,255,.15);
+      flex:0 0 auto;
+    }
+    .dot.green{ background: rgba(74,222,128,.95); box-shadow: 0 0 0 3px rgba(74,222,128,.15); }
+    .rule .line{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .formula{
+      margin-top:10px;
+      display:grid;
+      gap:8px;
+      font-size:13px;
+    }
+    .formulaItem{
+      padding:9px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+    }
+    .formulaItem .k{ color:var(--muted); font-size:12px; display:block; margin-bottom:3px; }
+    .exList{
+      margin-top:10px;
+      display:grid;
+      gap:8px;
+      font-size:13px;
+      color: var(--text);
+    }
+    .ex{
+      padding:9px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .ex b{ color: var(--good); }
+
+    /* Use section */
+    .useGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 680px){
+      .useGrid{grid-template-columns:1fr;}
+    }
+    .useBox{
+      padding:14px;
+      border-radius: var(--r2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .useBox h3{ margin:0 0 8px; font-size:14px; display:flex; gap:10px; align-items:center; }
+    .useBox ul{ margin:8px 0 0 18px; color:var(--muted); font-size:13px; }
+    .useBox li{ margin:6px 0; }
+    .useBox .example{ margin-top:10px; color:var(--text); font-size:13px; padding:9px 10px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); }
+
+    /* Practice questions */
+    .question{
+      padding:14px;
+      border-radius: var(--r2);
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .qtop{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-bottom:10px;
+    }
+    .qnum{
+      width:30px; height:30px;
+      border-radius: 11px;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      background: rgba(122,168,255,.18);
+      border:1px solid rgba(122,168,255,.35);
+      flex:0 0 auto;
+    }
+    .qtext{ margin:0; }
+
+    .choices{ display:grid; gap:8px; margin-top:6px; }
+    label.choice{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      cursor:pointer;
+      transition: transform .06s ease, border-color .15s ease, background .15s ease;
+      user-select:none;
+    }
+    label.choice:hover{
+      transform: translateY(-1px);
+      border-color: rgba(122,168,255,.34);
+      background: rgba(122,168,255,.08);
+    }
+    input[type="radio"]{ transform: scale(1.05); }
+
+    .fillPrompt{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .fillRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      font-size:15px;
+      margin-top:8px;
+    }
+    .blank{
+      min-width:160px;
+      flex: 1 1 180px;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      outline:none;
+    }
+    .blank:focus{
+      border-color: rgba(122,168,255,.55);
+      box-shadow: 0 0 0 3px rgba(122,168,255,.12);
+    }
+    .mini{
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* Writing */
+    textarea{
+      width:100%;
+      min-height:170px;
+      resize:vertical;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+      line-height:1.5;
+    }
+    textarea:focus{
+      border-color: rgba(122,168,255,.55);
+      box-shadow: 0 0 0 3px rgba(122,168,255,.12);
+    }
+
+    /* Score */
+    .scoreBox{
+      padding:14px;
+      border-radius: var(--r2);
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .scoreTop{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:baseline;
+    }
+    .scoreTop .big{
+      font-size:34px;
+      font-weight:950;
+      letter-spacing:-.03em;
+    }
+    .bar{
+      margin-top:10px;
+      height:10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+    }
+    .bar > div{
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, rgba(74,222,128,.95), rgba(122,168,255,.95));
+      transition: width .35s ease;
+    }
+    .chips{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .chip{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .chip.good{ border-color: rgba(74,222,128,.35); background: rgba(74,222,128,.10); color:#d7ffe4; }
+    .chip.bad{ border-color: rgba(251,113,133,.35); background: rgba(251,113,133,.10); color:#ffe1e7; }
+
+    .hr{
+      height:1px;
+      background: rgba(255,255,255,.08);
+      margin: 4px 0;
+    }
+
+    /* Confetti canvas */
+    #confetti{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:50;
+    }
+
+    /* Toast */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform: translateX(-50%);
+      z-index:60;
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.16);
+      color: var(--text);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      opacity:0;
+      transition: opacity .2s ease, transform .2s ease;
+      backdrop-filter: blur(10px);
+      font-size:13px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .toast.show{
+      opacity:1;
+      transform: translateX(-50%) translateY(-4px);
+    }
+  </style>
+</head>
+
+<body>
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>Past Simple vs Past Continuous</h1>
+      <p class="sub">
+        Review the <b>form</b> and <b>use</b>, then complete the practice activities.
+        Press <b>Check</b> to see your score (confetti at <b>90%+</b>).
+      </p>
+    </div>
+
+    <div class="actions">
+      <div class="pill">Progress: <strong id="progress">0/9</strong></div>
+      <div class="pill">Sound: <strong id="soundLabel">On</strong></div>
+      <button class="secondary" id="soundBtn" type="button">Toggle Sound</button>
+      <button id="checkBtn" type="button">Check</button>
+      <button class="secondary" id="resetBtn" type="button">Reset</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT: FORM + USE -->
+    <section class="card" aria-label="Form and Use">
+      <div class="cardHead">
+        <div>
+          <h2>A. FORM (Clear Comparison)</h2>
+          <div class="hint">How do we form each tense? (affirmative / negative / question)</div>
+        </div>
+        <div class="hint">Keep it simple + consistent</div>
+      </div>
+
+      <div class="content">
+        <div class="rulesGrid">
+          <div class="rule">
+            <h3><span class="dot"></span> Past Simple (Form)</h3>
+            <p class="line">Used for finished actions in the past.</p>
+
+            <div class="formula">
+              <div class="formulaItem"><span class="k">Affirmative</span>Subject + <b>V2</b></div>
+              <div class="formulaItem"><span class="k">Negative</span>Subject + <b>didn’t</b> + base verb</div>
+              <div class="formulaItem"><span class="k">Question</span><b>Did</b> + subject + base verb?</div>
+            </div>
+
+            <div class="exList">
+              <div class="ex">I <b>watched</b> TV.</div>
+              <div class="ex">I <b>didn’t watch</b> TV.</div>
+              <div class="ex"><b>Did</b> you <b>watch</b> TV?</div>
+            </div>
+          </div>
+
+          <div class="rule">
+            <h3><span class="dot green"></span> Past Continuous (Form)</h3>
+            <p class="line">Used for actions in progress in the past.</p>
+
+            <div class="formula">
+              <div class="formulaItem"><span class="k">Affirmative</span>Subject + <b>was/were</b> + verb-ing</div>
+              <div class="formulaItem"><span class="k">Negative</span>Subject + <b>wasn’t/weren’t</b> + verb-ing</div>
+              <div class="formulaItem"><span class="k">Question</span><b>Was/Were</b> + subject + verb-ing?</div>
+            </div>
+
+            <div class="exList">
+              <div class="ex">I <b>was watching</b> TV.</div>
+              <div class="ex">He <b>wasn’t sleeping</b>.</div>
+              <div class="ex"><b>Were</b> they <b>studying</b>?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sectionTitle">
+          <b>B. USE (Highlighting the Differences)</b>
+          <span class="badge">Key meaning (not just form)</span>
+        </div>
+
+        <div class="useGrid">
+          <div class="useBox">
+            <h3><span class="dot"></span> Past Simple – USE</h3>
+            <ul>
+              <li>Completed action</li>
+              <li>Short action</li>
+              <li>Action that interrupts another action</li>
+            </ul>
+            <div class="example">Example: The phone <b>rang</b>. / She <b>arrived</b> at 7 pm.</div>
+          </div>
+
+          <div class="useBox">
+            <h3><span class="dot green"></span> Past Continuous – USE</h3>
+            <ul>
+              <li>Action in progress at a specific time</li>
+              <li>Long action interrupted by a short action</li>
+              <li>Two actions happening at the same time</li>
+            </ul>
+            <div class="example">Example: I <b>was sleeping</b> when the phone <b>rang</b>.</div>
+          </div>
+        </div>
+
+        <div class="useBox">
+          <h3>Common pattern (most important)</h3>
+          <div class="example">
+            <b>Past continuous</b> (long/background) + <b>past simple</b> (short/interruption):<br>
+            I <b>was reading</b> at 5 pm when she <b>called</b>.
+          </div>
+          <div class="example" style="margin-top:10px;">
+            Two actions at the same time: I <b>was studying</b> while my sister <b>was listening</b> to music.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: PRACTICE + WRITING + SCORE -->
+    <aside class="card" aria-label="Practice and Writing">
+      <div class="cardHead">
+        <div>
+          <h2>Practice + Writing</h2>
+          <div class="hint">Do Practice 1 → Practice 2 → Writing.</div>
+        </div>
+        <div class="hint">Press “Check” anytime</div>
+      </div>
+
+      <div class="content">
+        <div class="scoreBox">
+          <div class="scoreTop">
+            <div>
+              <div class="pill" style="padding:8px 10px;">🎯 Goal: <strong>90%+</strong></div>
+              <div class="mini" style="margin-top:6px;">Your Score</div>
+            </div>
+            <div class="big" id="score">0%</div>
+          </div>
+          <div class="bar"><div id="bar"></div></div>
+          <div class="hint" id="scoreMsg" style="margin-top:10px;">
+            Complete Practice 1 and 2, then press <b>Check</b>.
+          </div>
+          <div class="chips" id="chips"></div>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="sectionTitle">
+          <b>Practice 1 – Choose the correct answer</b>
+          <span class="badge">4 questions</span>
+        </div>
+
+        <div id="p1"></div>
+
+        <div class="hr"></div>
+
+        <div class="sectionTitle">
+          <b>Practice 2 – Complete with Past Simple or Past Continuous</b>
+          <span class="badge">4 questions</span>
+        </div>
+
+        <div id="p2"></div>
+
+        <div class="hr"></div>
+
+        <div class="sectionTitle">
+          <b>✍️ Task – Writing</b>
+          <span class="badge">6–8 sentences</span>
+        </div>
+
+        <div class="question">
+          <p class="fillPrompt">
+            Write a short paragraph (6–8 sentences) about what you did yesterday.
+            Try to use <b>both</b> tenses at least once.
+          </p>
+          <textarea id="writing" placeholder="Yesterday, I ..."></textarea>
+          <div class="mini" style="margin-top:8px;">
+            Example structure: “I was ___ when ___ happened.” / “At 7 pm, I was ___.”
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+  /**********************
+   * Data
+   **********************/
+  const PRACTICE1 = [
+    { id:"p1q1", text:"I ____ a book at 5 pm yesterday.", choices:["read","was reading","have read"], answer:"was reading" },
+    { id:"p1q2", text:"She ____ dinner when I arrived.", choices:["was cooking","cooked","cooks"], answer:"was cooking" },
+    { id:"p1q3", text:"They ____ football while we ____ TV.", choices:["were playing / were watching","played / watched","was playing / was watching"], answer:"were playing / were watching" },
+    { id:"p1q4", text:"The phone ____ while I was sleeping.", choices:["rang","was ringing"], answer:"rang" }
+  ];
+
+  // Tolerant checking: accept common variants + contractions
+  const PRACTICE2 = [
+    {
+      id:"p2q1",
+      prompt:"I __________ (watch) TV when she __________ (call).",
+      acceptable:[ ["was watching"], ["called"] ],
+      expected:"was watching / called"
+    },
+    {
+      id:"p2q2",
+      prompt:"They __________ (play) while we __________ (clean).",
+      acceptable:[ ["were playing"], ["were cleaning"] ],
+      expected:"were playing / were cleaning"
+    },
+    {
+      id:"p2q3",
+      prompt:"She __________ (not listen) when the teacher __________ (ask) a question.",
+      acceptable:[ ["wasn't listening","was not listening"], ["asked"] ],
+      expected:"wasn't listening / asked"
+    },
+    {
+      id:"p2q4",
+      prompt:"What __________ you __________ (do) at 9 pm?",
+      acceptable:[ ["were"], ["doing"] ],
+      expected:"were / doing"
+    }
+  ];
+
+  /**********************
+   * Helpers
+   **********************/
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
+  const normalize = s => (s||"")
+    .trim()
+    .replace(/\s+/g," ")
+    .replace(/[’]/g,"'")
+    .toLowerCase();
+
+  /**********************
+   * Sound effects
+   **********************/
+  let soundOn = true;
+  let audioCtx = null;
+
+  function ensureAudio(){
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+  }
+
+  function clickSound(){
+    if (!soundOn) return;
+    ensureAudio();
+    const t = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(520, t);
+    osc.frequency.exponentialRampToValueAtTime(260, t + 0.06);
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(0.16, t + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.07);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(t);
+    osc.stop(t + 0.08);
+  }
+
+  function swooshSound(){
+    if (!soundOn) return;
+    ensureAudio();
+    const t = audioCtx.currentTime;
+    const bufferSize = Math.floor(audioCtx.sampleRate * 0.15);
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i=0;i<bufferSize;i++) data[i] = (Math.random()*2-1) * (1 - i/bufferSize);
+
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = "bandpass";
+    filter.Q.value = 0.9;
+    filter.frequency.setValueAtTime(900, t);
+    filter.frequency.exponentialRampToValueAtTime(220, t + 0.15);
+
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(0.38, t + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.15);
+
+    noise.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
+    noise.start(t); noise.stop(t + 0.16);
+  }
+
+  document.addEventListener("pointerdown", () => { if (soundOn) ensureAudio(); }, { once:true });
+
+  /**********************
+   * Confetti
+   **********************/
+  const confettiCanvas = $("#confetti");
+  const cctx = confettiCanvas.getContext("2d");
+  let particles = [];
+  let running = false;
+
+  function resizeConfetti(){
+    confettiCanvas.width = innerWidth * devicePixelRatio;
+    confettiCanvas.height = innerHeight * devicePixelRatio;
+    cctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  }
+  addEventListener("resize", resizeConfetti);
+  resizeConfetti();
+
+  function launchConfetti(){
+    const count = 220;
+    particles = [];
+    for (let i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*innerWidth,
+        y: -20 - Math.random()*innerHeight*0.2,
+        vx: (Math.random()*2-1) * 2.2,
+        vy: 2.2 + Math.random()*4.2,
+        size: 4 + Math.random()*6,
+        rot: Math.random()*Math.PI*2,
+        vr: (Math.random()*2-1) * 0.18,
+        color: `hsl(${Math.floor(Math.random()*360)}, 90%, 60%)`,
+        life: 1.0
+      });
+    }
+    running = true;
+    swooshSound();
+    requestAnimationFrame(tickConfetti);
+  }
+
+  function tickConfetti(){
+    if (!running) return;
+    cctx.clearRect(0,0,innerWidth,innerHeight);
+    let alive = 0;
+
+    for (const p of particles){
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.03;
+      p.rot += p.vr;
+      p.life -= 0.004;
+      if (p.y < innerHeight + 40 && p.life > 0) alive++;
+
+      cctx.save();
+      cctx.translate(p.x, p.y);
+      cctx.rotate(p.rot);
+      cctx.globalAlpha = Math.max(0, p.life);
+      cctx.fillStyle = p.color;
+      cctx.fillRect(-p.size/2, -p.size/2, p.size, p.size*0.7);
+      cctx.restore();
+    }
+
+    if (alive > 0) requestAnimationFrame(tickConfetti);
+    else { running = false; cctx.clearRect(0,0,innerWidth,innerHeight); }
+  }
+
+  /**********************
+   * Toast
+   **********************/
+  const toast = (() => {
+    const node = document.createElement("div");
+    node.className = "toast";
+    document.body.appendChild(node);
+    let timer = null;
+    return (msg) => {
+      clearTimeout(timer);
+      node.textContent = msg;
+      node.classList.add("show");
+      timer = setTimeout(() => node.classList.remove("show"), 1800);
+    };
+  })();
+
+  /**********************
+   * Build Practice 1
+   **********************/
+  function buildPractice1(){
+    const host = $("#p1");
+    host.innerHTML = "";
+    PRACTICE1.forEach((q, idx) => {
+      const wrap = document.createElement("div");
+      wrap.className = "question";
+      wrap.dataset.qid = q.id;
+
+      const top = document.createElement("div");
+      top.className = "qtop";
+      top.innerHTML = `<div class="qnum">${idx+1}</div><p class="qtext">${q.text}</p>`;
+      wrap.appendChild(top);
+
+      const choices = document.createElement("div");
+      choices.className = "choices";
+
+      q.choices.forEach((c, ci) => {
+        const id = `${q.id}_${ci}`;
+        const label = document.createElement("label");
+        label.className = "choice";
+        label.htmlFor = id;
+        label.innerHTML = `<input type="radio" name="${q.id}" id="${id}" value="${c}"><div>${c}</div>`;
+        label.addEventListener("click", () => { clickSound(); setTimeout(updateProgress, 0); });
+        choices.appendChild(label);
+      });
+
+      wrap.appendChild(choices);
+      host.appendChild(wrap);
+    });
+  }
+
+  /**********************
+   * Build Practice 2
+   **********************/
+  function buildPractice2(){
+    const host = $("#p2");
+    host.innerHTML = "";
+    PRACTICE2.forEach((q, idx) => {
+      const wrap = document.createElement("div");
+      wrap.className = "question";
+      wrap.dataset.qid = q.id;
+
+      const top = document.createElement("div");
+      top.className = "qtop";
+      top.innerHTML = `
+        <div class="qnum">${idx+1}</div>
+        <div>
+          <p class="qtext"><b>${q.prompt}</b></p>
+          <p class="fillPrompt">Type both answers. Expected: <b>${q.expected}</b></p>
+        </div>
+      `;
+      wrap.appendChild(top);
+
+      const row = document.createElement("div");
+      row.className = "fillRow";
+
+      const input1 = document.createElement("input");
+      input1.className = "blank";
+      input1.placeholder = "first blank";
+      input1.addEventListener("input", updateProgress);
+      input1.addEventListener("focus", clickSound);
+
+      const input2 = document.createElement("input");
+      input2.className = "blank";
+      input2.placeholder = "second blank";
+      input2.addEventListener("input", updateProgress);
+      input2.addEventListener("focus", clickSound);
+
+      row.appendChild(input1);
+      row.appendChild(input2);
+
+      const note = document.createElement("div");
+      note.className = "mini";
+      note.textContent = "Tip: check spelling and tense (was/were + -ing).";
+
+      wrap.appendChild(row);
+      wrap.appendChild(note);
+      host.appendChild(wrap);
+    });
+  }
+
+  /**********************
+   * Progress
+   **********************/
+  function answeredCount(){
+    let n = 0;
+
+    PRACTICE1.forEach(q => { if ($(`input[name="${q.id}"]:checked`)) n++; });
+
+    PRACTICE2.forEach(q => {
+      const box = $(`.question[data-qid="${q.id}"]`, $("#p2"));
+      const ins = $$(".blank", box);
+      if (ins.every(i => i.value.trim().length)) n++;
+    });
+
+    const w = $("#writing").value.trim();
+    if (w.length >= 10) n++;
+
+    return n;
+  }
+
+  function updateProgress(){
+    $("#progress").textContent = `${answeredCount()}/9`;
+  }
+
+  /**********************
+   * Scoring (Practice 1 + 2)
+   **********************/
+  function scoreAll(){
+    const chips = $("#chips");
+    chips.innerHTML = "";
+
+    let correct = 0;
+    const total = 8;
+
+    // P1
+    PRACTICE1.forEach((q, i) => {
+      const picked = $(`input[name="${q.id}"]:checked`);
+      const ok = picked && picked.value === q.answer;
+      if (ok) correct++;
+      const chip = document.createElement("span");
+      chip.className = `chip ${ok ? "good" : "bad"}`;
+      chip.textContent = `P1-${i+1}: ${ok ? "✓" : "✗"}`;
+      chips.appendChild(chip);
+    });
+
+    // P2
+    PRACTICE2.forEach((q, i) => {
+      const box = $(`.question[data-qid="${q.id}"]`, $("#p2"));
+      const ins = $$(".blank", box);
+      const u1 = normalize(ins[0]?.value);
+      const u2 = normalize(ins[1]?.value);
+
+      const ok = q.acceptable[0].map(normalize).includes(u1) &&
+                 q.acceptable[1].map(normalize).includes(u2);
+
+      if (ok) correct++;
+
+      const chip = document.createElement("span");
+      chip.className = `chip ${ok ? "good" : "bad"}`;
+      chip.textContent = `P2-${i+1}: ${ok ? "✓" : "✗"}`;
+      chips.appendChild(chip);
+
+      if (!ok && (u1 || u2)) toast(`P2-${i+1}: check tense + spelling.`);
+    });
+
+    const pct = Math.round((correct/total)*100);
+    $("#score").textContent = `${pct}%`;
+    $("#bar").style.width = `${pct}%`;
+
+    if (answeredCount() < 8){
+      $("#scoreMsg").innerHTML = `You’ve completed <b>${answeredCount()}</b> of <b>9</b> items. Finish Practice 1 and 2 for a score.`;
+    } else {
+      if (pct >= 90){
+        $("#scoreMsg").innerHTML = `Excellent! You scored <b>${correct}/${total}</b>. Confetti unlocked 🎉`;
+        launchConfetti();
+        toast("🎉 90%+ — great work!");
+      } else if (pct >= 70){
+        $("#scoreMsg").innerHTML = `Good progress: <b>${correct}/${total}</b>. Try again to reach 90%+.`;
+        toast("Almost there — fix a couple items!");
+      } else {
+        $("#scoreMsg").innerHTML = `Score: <b>${correct}/${total}</b>. Review the form/use and try again.`;
+        toast("Try again — you can improve quickly!");
+      }
+    }
+
+    clickSound();
+    updateProgress();
+  }
+
+  function resetAll(){
+    PRACTICE1.forEach(q => $$(`input[name="${q.id}"]`).forEach(r => r.checked=false));
+    PRACTICE2.forEach(q => {
+      const box = $(`.question[data-qid="${q.id}"]`, $("#p2"));
+      $$(".blank", box).forEach(i => i.value="");
+    });
+    $("#writing").value = "";
+
+    $("#score").textContent = "0%";
+    $("#bar").style.width = "0%";
+    $("#chips").innerHTML = "";
+    $("#scoreMsg").innerHTML = `Complete Practice 1 and 2, then press <b>Check</b>.`;
+
+    swooshSound();
+    updateProgress();
+    toast("Reset complete.");
+  }
+
+  /**********************
+   * Buttons
+   **********************/
+  $("#checkBtn").addEventListener("click", scoreAll);
+  $("#resetBtn").addEventListener("click", resetAll);
+
+  $("#soundBtn").addEventListener("click", () => {
+    soundOn = !soundOn;
+    $("#soundLabel").textContent = soundOn ? "On" : "Off";
+    clickSound();
+    toast(`Sound ${soundOn ? "on" : "off"}.`);
+  });
+
+  $("#writing").addEventListener("input", updateProgress);
+
+  /**********************
+   * Init
+   **********************/
+  buildPractice1();
+  buildPractice2();
+  updateProgress();
+</script>
+</body>
+</html>
